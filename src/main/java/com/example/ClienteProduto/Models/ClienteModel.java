@@ -8,7 +8,6 @@ import java.util.List;
 @Data
 @Entity
 @Table(name = "TBL_CLIENTE")
-
 public class ClienteModel {
 
     @Id
@@ -16,7 +15,7 @@ public class ClienteModel {
     private Long id;
     private String nomeCliente;
 
-    @OneToMany
+    @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     private List<ProdutoModel> produtoModels;
 
 }
